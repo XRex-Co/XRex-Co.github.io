@@ -10,7 +10,14 @@ Test
     <input type="hidden" name="cmd" value="0">
     <input type="hidden" name="jb" value="CAPTURE">
     <input type="hidden" name="am" value="1000">
-    <input type="hidden" name="tx" value="100">
+    <input type="hidden" name="tx" value="10">
     <input type="hidden" name="sf" value="0">
     <input type="submit" name="submit" value="購入">
 </form>
+
+<FORM ACTION="https://credit.j-payment.co.jp/gateway/payform.aspx" METHOD="POST">
+    <INPUT TYPE="HIDDEN" NAME="aid" VALUE="100000">
+    <INPUT TYPE="HIDDEN" NAME="pt" VALUE="1">
+    <INPUT TYPE="HIDDEN" NAME="iid" VALUE="002">
+    <INPUT TYPE="submit" NAME="submit" VALUE="従量課金">
+</FORM>
