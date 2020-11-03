@@ -2,7 +2,7 @@
 layout: default
 title: 購入
 ---
-
+aaa
 <form action="https://credit.j-payment.co.jp/gateway/payform.aspx"method="POST">
 <input type="hidden"name="aid"value="119743">
 <input type="hidden"name="pt"value="1">
