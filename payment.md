@@ -18,6 +18,6 @@ Test
 <FORM ACTION="https://credit.j-payment.co.jp/gateway/payform.aspx" METHOD="POST">
     <INPUT TYPE="HIDDEN" NAME="aid" VALUE="100000">
     <INPUT TYPE="HIDDEN" NAME="pt" VALUE="1">
-    <INPUT TYPE="HIDDEN" NAME="iid" VALUE="002">
+    <INPUT TYPE="HIDDEN" NAME="iid" VALUE="J002">
     <INPUT TYPE="submit" NAME="submit" VALUE="従量課金">
 </FORM>
