@@ -42,5 +42,15 @@ function doPurchase() {
         execPurchase
     );
 }
+// コールバック関数
+function execPurchase(resultCode, errMsg) {
+    if (resultCode != "Success") {
+        // 戻り値がSuccess以外の場合はエラーメッセージを表示
+        window.alert(errMsg);
+    } else {
+        // スクリプトからフォームをsubmit
+        $("#mainform").submit();
+    }
+}
 </script>
     
