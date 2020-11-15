@@ -22,12 +22,19 @@ Test
     <INPUT TYPE="submit" NAME="submit" VALUE="従量課金">
 </FORM>
         
-<form id="mainform">
+<form id="popup">
     <input id="tkn" name="tkn" type="hidden" value="">
     <div id="CARD_INPUT_FORM"></div>
-    <input type="button" value="購入する" onclick="doPurchase()"/>
+    <input type="button" value="ポップアップ方式" onclick="doPurchase()"/>
 </form>
 
+<form id="customize">
+カード番号：<input type="text" value="" name="cn" id="cn" />
+カード有効期限：<input type="text" value="" name="ed_year" id="ed_year" /> /<input type="text" value="" name="ed_month" id="ed_month" />
+カード名義人：<input type="text" value="" name="fn" id="fn" /><input type="text" value="" name="ln" id="ln" />
+<input id="tkn" name="tkn" type="hidden" value="">
+<input type="button" value="購入する" onclick="doPurchaseCustomize()"/>
+</form>
 
 <script type="text/javascript" src="https://credit.j-payment.co.jp/gateway/js/jquery.js"></script>
 <script type="text/javascript" src="https://credit.j-payment.co.jp/gateway/js/CPToken.js"></script>
@@ -49,6 +56,35 @@ function execPurchase(resultCode, errMsg) {
         window.alert(errMsg);
     } else {
         // スクリプトからフォームをsubmit
+        $("#popup").submit();
+    }
+}
+    
+function doPurchaseCustomize() {
+    // CP非同期通信よりトークンを生成する
+    CPToken.TokenCreate(
+        {
+            aid: '119743',
+            cn: $("#cn").val(),
+            ed: $("#ed_year").val() + $("#ed_month").val(),
+            fn: $("#fn").val(),
+            ln: $("#ln").val()
+        },
+        execPurchaseCustomize
+    );
+}
+// コールバック関数
+function execPurchaseCustomize(resultCode, errMsg) {
+    if (resultCode != "Success") {
+        window.alert(errMsg);
+    } else {
+        // カード情報を消去
+        $("#cn").val("");
+        $("#ed_year").val("");
+        $("#ed_month").val("");
+        $("#fn").val("");
+        $("#ln").val("");
+        //スクリプトからフォームをsubmit
         $("#mainform").submit();
     }
 }
