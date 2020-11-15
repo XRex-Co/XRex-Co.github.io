@@ -29,9 +29,9 @@ Test
 </form>
 
 <form id="customize">
-カード番号：<input type="text" value="" name="cn" id="cn" />
-カード有効期限：<input type="text" value="" name="ed_year" id="ed_year" /> /<input type="text" value="" name="ed_month" id="ed_month" />
-カード名義人：<input type="text" value="" name="fn" id="fn" /><input type="text" value="" name="ln" id="ln" />
+カード番号：<input type="text" value="" name="cn" id="cn" /><br/>
+カード有効期限：<input type="text" value="" name="ed_year" id="ed_year" /> /<input type="text" value="" name="ed_month" id="ed_month" /><br/>
+カード名義人：<input type="text" value="" name="fn" id="fn" /><input type="text" value="" name="ln" id="ln" /><br/>
 <input id="tkn" name="tkn" type="hidden" value="">
 <input type="button" value="購入する" onclick="doPurchaseCustomize()"/>
 </form>
