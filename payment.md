@@ -21,3 +21,26 @@ Test
     <INPUT TYPE="HIDDEN" NAME="iid" VALUE="003">
     <INPUT TYPE="submit" NAME="submit" VALUE="従量課金">
 </FORM>
+        
+<form id="mainform">
+    <input id="tkn" name="tkn" type="hidden" value="">
+    <div id="CARD_INPUT_FORM"></div>
+    <input type="button" value="購入する" onclick="doPurchase()"/>
+</form>
+
+
+<script type="text/javascript" src="https://credit.j-payment.co.jp/gateway/js/jquery.js"></script>
+<script type="text/javascript" src="https://credit.j-payment.co.jp/gateway/js/CPToken.js"></script>
+<script>
+// カード情報入力フォーム表示
+function doPurchase() {
+    //CP非同期通信よりカード番号入力画面を表示する
+    CPToken.CardInfo(
+        {
+            aid: '119743'
+        },
+        execPurchase
+    );
+}
+</script>
+    
