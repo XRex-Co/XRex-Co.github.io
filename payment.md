@@ -72,7 +72,7 @@ function execPurchase(resultCode, errMsg) {
                 tx: 10,
                 sf: 0
             },
-            dataType: 'json',,
+            dataType: 'json',
             xhrFields: {
                 withCredentials: true
             },
