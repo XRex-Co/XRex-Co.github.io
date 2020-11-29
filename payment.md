@@ -72,9 +72,15 @@ function execPurchase(resultCode, errMsg) {
                 tx: 10,
                 sf: 0
             },
-            function(data){
-                //リクエストが成功した際に実行する関数
-                alert("Success");
+            dataType: 'json',,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function(result, textStatus, xhr) {
+                var a = 0;
+            },
+            error: function(xhr, textStatus, error) {
+                var b = 0;
             }
         });
     }
