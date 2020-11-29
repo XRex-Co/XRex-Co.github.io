@@ -5,7 +5,7 @@ title: 購入
 Test
 
 <form action="https://credit.j-payment.co.jp/gateway/payform.aspx" method="POST">
-    <input type="hidden" name="aid" value="119743">
+    <input type="hidden" name="aid" value="119747">
     <input type="hidden" name="pt" value="1">
     <input type="hidden" name="cmd" value="0">
     <input type="hidden" name="jb" value="CAPTURE">
@@ -16,7 +16,7 @@ Test
 </form>
 
 <FORM ACTION="https://credit.j-payment.co.jp/gateway/payform.aspx" METHOD="POST">
-    <INPUT TYPE="HIDDEN" NAME="aid" value="119743">
+    <INPUT TYPE="HIDDEN" NAME="aid" value="119747">
     <INPUT TYPE="HIDDEN" NAME="pt" VALUE="1">
     <INPUT TYPE="HIDDEN" NAME="iid" VALUE="003">
     <INPUT TYPE="submit" NAME="submit" VALUE="従量課金">
@@ -44,7 +44,7 @@ function doPurchase() {
     //CP非同期通信よりカード番号入力画面を表示する
     CPToken.CardInfo(
         {
-            aid: '119743'
+            aid: '119747'
         },
         execPurchase
     );
@@ -64,7 +64,7 @@ function doPurchaseCustomize() {
     // CP非同期通信よりトークンを生成する
     CPToken.TokenCreate(
         {
-            aid: '119743',
+            aid: '119747',
             cn: $("#cn").val(),
             ed: $("#ed_year").val() + $("#ed_month").val(),
             fn: $("#fn").val(),
