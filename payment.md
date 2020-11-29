@@ -24,6 +24,15 @@ Test
         
 <form id="popup">
     <input id="tkn" name="tkn" type="hidden" value="">
+    <input id="aid" name="aid" type="hidden" value="119747">
+    <input id="jb" name="jb" type="hidden" value="CAPTURE">
+    <input id="rt" name="rt" type="hidden" value="1">
+    <input id="cod" name="cod" type="hidden" value="001">
+    <input id="pn" name="pn" type="hidden" value="0300000000">
+    <input id="em" name="em" type="hidden" value="ksuke@outlook.jp">
+    <input id="am" name="am" type="hidden" value="100">
+    <input id="tx" name="tx" type="hidden" value="10">
+    <input id="sf" name="sf" type="hidden" value="0">
     <div id="CARD_INPUT_FORM"></div>
     <input type="button" value="ポップアップ方式" onclick="doPurchase()"/>
 </form>
@@ -56,33 +65,7 @@ function execPurchase(resultCode, errMsg) {
         window.alert(errMsg);
     } else {
         // スクリプトからフォームをsubmit
-        //$("#popup").submit();
-        $.ajax({
-            type: 'POST',
-            url: 'https://credit.j-payment.co.jp/gateway/gateway_token.aspx',
-            data: {
-                aid: '119747',
-                jb: 'CAPTURE',
-                rt: 1,
-                cod: '001',
-                tkn: $('#tkn').val(),
-                pn: 03,
-                em: 'ksuke@outlook.jp',
-                am: 100,
-                tx: 10,
-                sf: 0
-            },
-            dataType: 'json',
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function(result, textStatus, xhr) {
-                var a = 0;
-            },
-            error: function(xhr, textStatus, error) {
-                var b = 0;
-            }
-        });
+        $("#popup").submit();
     }
 }
     
