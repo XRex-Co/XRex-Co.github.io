@@ -56,7 +56,27 @@ function execPurchase(resultCode, errMsg) {
         window.alert(errMsg);
     } else {
         // スクリプトからフォームをsubmit
-        $("#popup").submit();
+        //$("#popup").submit();
+        $.ajax({
+            type: 'POST',
+            url: 'https://credit.j-payment.co.jp/gateway/gateway_token.aspx',
+            data: {
+                aid: '119747',
+                jb: 'CAPTURE',
+                rt: 1,
+                cod: '001',
+                tkn: $('#tkn').val(),
+                pn: 03,
+                em: 'ksuke@outlook.jp',
+                am: 100,
+                tx: 10,
+                sf: 0
+            },
+            function(data){
+                //リクエストが成功した際に実行する関数
+                alert("Success");
+            }
+        });
     }
 }
     
